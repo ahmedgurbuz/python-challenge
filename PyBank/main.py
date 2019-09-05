@@ -1,7 +1,7 @@
 import os
 import csv
 
-# Path to collect data from the Resources folder
+# Path to collect data from the resource
 
 path = r"C:\Users\AG\Documents\SMU COURSE\SMU-DAL-DATA-PT-08-2019-U-C\02-Homework\03-Python\Instructions\PyBank\Resources\budget_data.csv"
 
@@ -11,24 +11,29 @@ with open(path, 'r') as csvfile:
     # Split the data on commas
     csvreader = csv.reader(csvfile, delimiter=',')
 
+    #Skipping the header row
     header = next(csvreader, None)
 
     months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Sep", "Oct", "Nov", "Dec"]
     years = ["10","11","12","13", "14", "15", "16", "17"]
 
+    #Assigning total profit as a variable
     total_profit = 0
 
+    #Looping through csv file with our handle
     for row in csvreader:
 
         #Assigning values to variables with descriptive names
         date = row[0]
         profit = row[1]
+
+        #Calculating total profit
         total_profit += int(profit)
     
     
     
     
-    
+    #Printing the final values
     print("FINANCIAL ANALYSIS")
     print("-"*20)
     print(f"Total Months: {total_profit}")
