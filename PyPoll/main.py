@@ -53,7 +53,7 @@ with open(path, 'r') as election_data:
     print(str2)
 
     #Uniting results table and writing line by line to text file
-    results = [ str1 + "\n", str2 + "\n", str3 + str2 + "\n" + "\n", str4 + "\n", str5 + "\n", str6 + "\n", str7 + "\n", str2] 
+    results = [ str1 + "\n", str2 + "\n", str3 + "\n", str2 + "\n", str4 + "\n", str5 + "\n", str6 + "\n", str2 + "\n", str7 + "\n", str2] 
     file_object.writelines(results)
     #Closing text file
     file_object.close()
