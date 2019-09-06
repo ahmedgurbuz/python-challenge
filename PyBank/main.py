@@ -5,11 +5,14 @@ import csv
 
 path = r"C:\Users\AG\Documents\SMU COURSE\SMU-DAL-DATA-PT-08-2019-U-C\02-Homework\03-Python\Instructions\PyBank\Resources\budget_data.csv"
 
+# initializing the titles and rows list  
+months = [] 
+
 # Read in the CSV file
-with open(path, 'r') as csvfile:
+with open(path, 'r') as budget_data:
 
     # Split the data on commas
-    csvreader = csv.reader(csvfile, delimiter=',')
+    csvreader = csv.reader(budget_data, delimiter=',')
 
     #Skipping the header row
     header = next(csvreader, None)
@@ -22,6 +25,8 @@ with open(path, 'r') as csvfile:
 
     #Looping through csv file with our handle
     for row in csvreader:
+        
+        months.append(row)
 
         #Assigning values to variables with descriptive names
         date = row[0]
@@ -36,7 +41,7 @@ with open(path, 'r') as csvfile:
     #Printing the final values
     print("FINANCIAL ANALYSIS")
     print("-"*20)
-    print(f"Total Months: {total_profit}")
+    print(f"Total Months: {(csvreader.line_num)-1}")
     print(f"Total: ${total_profit}")
     print(f"Average  Change: ${total_profit}")
     print(f"Greatest Increase in Profits: {total_profit}")
