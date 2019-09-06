@@ -13,7 +13,7 @@ with open(path, 'r') as election_data:
     csvreader = csv.reader(election_data, delimiter=',')
     
     #Skipping the header row
-    header = next(csvreader, None)
+    next(csvreader)
 
     #Looping through csv file with our handle
     for row in csvreader:
@@ -25,7 +25,6 @@ with open(path, 'r') as election_data:
 
         #Calculating total votes (total rows of data)
         total_votes = (csvreader.line_num)-1
-
     
 
    # Open function to create and write on the file "Results.txt"  
